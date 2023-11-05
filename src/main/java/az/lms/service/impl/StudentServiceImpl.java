@@ -16,8 +16,10 @@ import az.lms.security.PasswordEncoder;
 import az.lms.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.mail.MessagingException;
 import java.util.List;
 
 /**
@@ -33,6 +35,10 @@ public class StudentServiceImpl implements StudentService {
    private final StudentMapper studentMapper;
    private final OrderMapper orderMapper;
    private final PasswordEncoder passwordCoderConfig;
+   private final EmailService emailService;
+
+   @Value("${user.greeting.mail}")
+   private String message;
 
    @Override
    public List<StudentResponse> getAll() {
@@ -44,13 +50,23 @@ public class StudentServiceImpl implements StudentService {
    @Override
    public void create(StudentRequest request) {
       log.info("Creating new student account");
-      if (!studentRepository.existsByFIN(request.getFIN())) {
-         Student student = studentMapper.requestToEntity(request);
-         student.setFIN(request.getFIN().toLowerCase());
-         student.setPassword(passwordCoderConfig.passwordEncode(request.getPassword()));
-         student.setRoleType(RoleType.STUDENT);
-         studentRepository.save(student);
-      } else throw new AlreadyExistsException("Student already exist with such fin code");
+
+      if (studentRepository.existsByFIN(request.getFIN())) {
+         throw new AlreadyExistsException("Student already exist with such fin code");
+      }
+      Student student = studentMapper.requestToEntity(request);
+      student.setFIN(request.getFIN().toLowerCase());
+      student.setPassword(passwordCoderConfig.passwordEncode(request.getPassword()));
+      student.setRoleType(RoleType.STUDENT);
+      studentRepository.save(student);
+      var to = request.getEmail();
+      var subject = "Enrolled!";
+      var text = "Hi, ".concat(request.getName()) + " " + request.getSurName()+"\n".concat(message);
+      try {
+         emailService.sendEmail(to, subject, text);
+      } catch (MessagingException e) {
+         throw new RuntimeException(e);
+      }
    }
 
    @Override
@@ -61,6 +77,14 @@ public class StudentServiceImpl implements StudentService {
       Student newStudent = studentMapper.requestToEntity(request);
       newStudent.setId(student.getId());
       studentRepository.save(newStudent);
+      var to = request.getEmail();
+      var subject = "Data updated";
+      var text = "Your personal information was updated ".concat(request.getName()) + " " + request.getSurName();
+      try {
+         emailService.sendEmail(to, subject, text);
+      } catch (MessagingException e) {
+         throw new RuntimeException(e);
+      }
    }
 
    @Override
