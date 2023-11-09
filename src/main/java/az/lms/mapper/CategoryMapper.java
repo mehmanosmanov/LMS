@@ -7,12 +7,15 @@
 
 package az.lms.mapper;
 
-import az.lms.dto.request.CategoryRequest;
-import az.lms.dto.response.CategoryResponse;
-import az.lms.model.Category;
+import az.lms.model.dto.request.CategoryRequest;
+import az.lms.model.dto.response.CategoryResponse;
+import az.lms.model.entity.Category;
 import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",
+        unmappedSourcePolicy = ReportingPolicy.IGNORE,
+        unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface CategoryMapper {
     CategoryResponse modelToResponse(Category author);
     Category requestToModel(CategoryRequest request);

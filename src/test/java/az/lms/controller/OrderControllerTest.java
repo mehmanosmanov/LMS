@@ -1,9 +1,8 @@
 package az.lms.controller;
 
 import az.lms.LmsApplication;
-import az.lms.dto.request.OrderRequest;
-import az.lms.dto.response.OrderResponse;
-import az.lms.enums.OrderType;
+import az.lms.model.dto.response.OrderResponse;
+import az.lms.model.enums.OrderType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

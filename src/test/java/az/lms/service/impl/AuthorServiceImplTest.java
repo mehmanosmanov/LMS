@@ -1,11 +1,11 @@
 package az.lms.service.impl;
 
-import az.lms.dto.request.AuthorRequest;
+import az.lms.model.dto.request.AuthorRequest;
 import az.lms.exception.NotFoundException;
 import az.lms.mapper.AuthorMapper;
-import az.lms.model.Author;
-import az.lms.model.Book;
-import az.lms.model.Category;
+import az.lms.model.entity.Author;
+import az.lms.model.entity.Book;
+import az.lms.model.entity.Category;
 import az.lms.repository.AuthorRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

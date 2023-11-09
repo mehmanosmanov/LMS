@@ -1,26 +1,27 @@
 package az.lms.service.impl;
 
-import az.lms.dto.request.OrderRequest;
-import az.lms.dto.response.OrderResponse;
 import az.lms.exception.AlreadyExistsException;
 import az.lms.exception.InsufficientCount;
 import az.lms.exception.NotFoundException;
 import az.lms.mapper.OrderMapper;
-import az.lms.model.Book;
-import az.lms.model.Order;
-import az.lms.enums.OrderType;
-import az.lms.model.Student;
+import az.lms.model.dto.request.OrderRequest;
+import az.lms.model.dto.response.OrderResponse;
+import az.lms.model.entity.Book;
+import az.lms.model.entity.Order;
+import az.lms.model.entity.Student;
+import az.lms.model.enums.OrderType;
 import az.lms.repository.BookRepository;
 import az.lms.repository.OrderRepository;
 import az.lms.repository.StudentRepository;
 import az.lms.service.OrderService;
+import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.mail.MessagingException;
 import javax.transaction.Transactional;
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -28,15 +29,16 @@ import java.util.List;
  * @project LMS
  */
 @Service
-@Slf4j
 @RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@Slf4j
 public class OrderServiceImpl implements OrderService {
 
-   private final OrderRepository orderRepository;
-   private final StudentRepository studentRepository;
-   private final BookRepository bookRepository;
-   private final EmailService emailService;
-   private final OrderMapper orderMapper;
+   final OrderRepository orderRepository;
+   final StudentRepository studentRepository;
+   final BookRepository bookRepository;
+   final EmailService emailService;
+   final OrderMapper orderMapper;
 
    @Override
    public List<OrderResponse> getOrders() {

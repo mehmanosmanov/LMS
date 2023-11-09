@@ -1,8 +1,8 @@
 package az.lms.controller;
 
-import az.lms.dto.request.StudentRequest;
-import az.lms.dto.response.OrderResponse;
-import az.lms.dto.response.StudentResponse;
+import az.lms.model.dto.request.StudentRequest;
+import az.lms.model.dto.response.OrderResponse;
+import az.lms.model.dto.response.StudentResponse;
 import az.lms.service.StudentService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

@@ -1,7 +1,6 @@
 package az.lms.exception;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -7,16 +7,16 @@
 
 package az.lms.service.impl;
 
-import az.lms.dto.request.LoginRequest;
-import az.lms.dto.request.StudentRequest;
-import az.lms.dto.response.StudentResponse;
-import az.lms.dto.response.TokenResponse;
-import az.lms.enums.RoleType;
-import az.lms.enums.TokenType;
+import az.lms.model.dto.request.LoginRequest;
+import az.lms.model.dto.request.StudentRequest;
+import az.lms.model.dto.response.StudentResponse;
+import az.lms.model.dto.response.TokenResponse;
+import az.lms.model.enums.RoleType;
+import az.lms.model.enums.TokenType;
 import az.lms.exception.AlreadyExistsException;
 import az.lms.exception.NotFoundException;
 import az.lms.mapper.StudentMapper;
-import az.lms.model.Student;
+import az.lms.model.entity.Student;
 import az.lms.repository.StudentRepository;
 import az.lms.security.JwtTokenProvider;
 import az.lms.security.PasswordEncoder;
@@ -74,4 +74,14 @@ public class AuthServiceImpl implements AuthService {
          throw new NotFoundException("User not found with email '" + request.getEmail() );
       }
    }
+
+   @Override
+   public TokenResponse refresh(UserDetails userDetails) {
+      TokenResponse tokenResponse = new TokenResponse();
+      tokenResponse.setAccessToken(jwtTokenProvider.generateToken(userDetails, TokenType.ACCESS_TOKEN));
+      tokenResponse.setRefreshToken(jwtTokenProvider.generateToken(userDetails, TokenType.REFRESH_TOKEN));
+      return tokenResponse;
+   }
+
+
 }

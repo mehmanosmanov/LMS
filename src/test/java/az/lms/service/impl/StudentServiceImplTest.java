@@ -1,15 +1,15 @@
 package az.lms.service.impl;
 
-import az.lms.dto.request.StudentRequest;
-import az.lms.dto.response.OrderResponse;
-import az.lms.dto.response.StudentResponse;
-import az.lms.enums.RoleType;
+import az.lms.model.dto.request.StudentRequest;
+import az.lms.model.dto.response.OrderResponse;
+import az.lms.model.dto.response.StudentResponse;
+import az.lms.model.enums.RoleType;
 import az.lms.exception.AlreadyExistsException;
 import az.lms.exception.NotFoundException;
 import az.lms.mapper.OrderMapper;
 import az.lms.mapper.StudentMapper;
-import az.lms.model.Order;
-import az.lms.model.Student;
+import az.lms.model.entity.Order;
+import az.lms.model.entity.Student;
 import az.lms.repository.OrderRepository;
 import az.lms.repository.StudentRepository;
 import az.lms.security.PasswordEncoder;

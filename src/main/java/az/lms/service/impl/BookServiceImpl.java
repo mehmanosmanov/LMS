@@ -1,16 +1,16 @@
 package az.lms.service.impl;
 
-import az.lms.dto.request.BookRequest;
-import az.lms.dto.response.AuthorResponse;
-import az.lms.dto.response.BookResponse;
+import az.lms.model.dto.request.BookRequest;
+import az.lms.model.dto.response.AuthorResponse;
+import az.lms.model.dto.response.BookResponse;
 
 import az.lms.exception.AlreadyExistsException;
 import az.lms.exception.NotFoundException;
 import az.lms.mapper.AuthorMapper;
 import az.lms.mapper.BookMapper;
-import az.lms.model.Author;
-import az.lms.model.Book;
-import az.lms.model.Category;
+import az.lms.model.entity.Author;
+import az.lms.model.entity.Book;
+import az.lms.model.entity.Category;
 import az.lms.repository.AuthorRepository;
 import az.lms.repository.BookRepository;
 import az.lms.service.BookService;
@@ -18,13 +18,10 @@ import az.lms.util.FileUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartFile;
-import software.amazon.awssdk.services.s3.S3Client;
 
 import javax.transaction.Transactional;
 import java.io.IOException;
-import java.net.URL;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;

@@ -7,9 +7,9 @@
 
 package az.lms.service;
 
-import az.lms.dto.request.AuthorRequest;
-import az.lms.dto.response.AuthorResponse;
-import az.lms.model.Book;
+import az.lms.model.dto.request.AuthorRequest;
+import az.lms.model.dto.response.AuthorResponse;
+import az.lms.model.entity.Book;
 
 import java.util.List;
 

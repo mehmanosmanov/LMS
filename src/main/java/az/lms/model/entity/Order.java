@@ -1,7 +1,8 @@
-package az.lms.model;
+package az.lms.model.entity;
 
-import az.lms.enums.OrderType;
+import az.lms.model.enums.OrderType;
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -18,20 +19,21 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Order {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long id;
+   Long id;
 
-   @Column(name = "student_id")
-   private Long studentId;
-   @Column(name = "book_id")
-   private Long bookId;
+   @Column(name = "student_id", nullable = false)
+   Long studentId;
+   @Column(name = "book_id", nullable = false)
+   Long bookId;
    @Column(name = "order_time")
    @CreationTimestamp
-   private LocalDateTime orderTime;
-   @Column(name = "order_type")
+   LocalDateTime orderTime;
+   @Column(name = "order_type", nullable = false)
    @Enumerated(EnumType.STRING)
-   private OrderType orderType;
+   OrderType orderType;
 
 }

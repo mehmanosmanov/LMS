@@ -5,10 +5,11 @@
  *Project name:LMS
  */
 
-package az.lms.dto.response;
+package az.lms.model.dto.response;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -18,9 +19,10 @@ import javax.validation.constraints.Size;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class CategoryResponse {
-    private Long id;
-    private String name;
-    private String description;
-    private String type;
+   Long id;
+   String name;
+   String description;
+   String type;
 }

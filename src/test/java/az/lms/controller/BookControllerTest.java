@@ -1,10 +1,10 @@
 package az.lms.controller;
 
 import az.lms.LmsApplication;
-import az.lms.dto.request.BookRequest;
-import az.lms.dto.response.BookResponse;
-import az.lms.model.Author;
-import az.lms.model.Category;
+import az.lms.model.dto.request.BookRequest;
+import az.lms.model.dto.response.BookResponse;
+import az.lms.model.entity.Author;
+import az.lms.model.entity.Category;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;

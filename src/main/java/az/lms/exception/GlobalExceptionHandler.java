@@ -1,6 +1,6 @@
 package az.lms.exception;
 
-import az.lms.dto.response.ErrorResponse;
+import az.lms.model.dto.response.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.dao.DataIntegrityViolationException;

@@ -5,7 +5,7 @@
  *Project name:LMS
  */
 
-package az.lms.enums;
+package az.lms.model.enums;
 
 public enum RoleType {
     ADMIN,

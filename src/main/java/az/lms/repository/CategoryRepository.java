@@ -7,7 +7,7 @@
 
 package az.lms.repository;
 
-import az.lms.model.Category;
+import az.lms.model.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

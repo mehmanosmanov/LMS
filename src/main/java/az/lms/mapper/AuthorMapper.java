@@ -7,12 +7,15 @@
 
 package az.lms.mapper;
 
-import az.lms.dto.request.AuthorRequest;
-import az.lms.dto.response.AuthorResponse;
-import az.lms.model.Author;
+import az.lms.model.dto.request.AuthorRequest;
+import az.lms.model.dto.response.AuthorResponse;
+import az.lms.model.entity.Author;
 import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",
+        unmappedSourcePolicy = ReportingPolicy.IGNORE,
+        unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface AuthorMapper {
     AuthorResponse modelToResponse(Author author);
 
