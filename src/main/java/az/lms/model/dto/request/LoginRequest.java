@@ -5,17 +5,20 @@
  *Project name:LMS
  */
 
-package az.lms.dto.request;
+package az.lms.model.dto.request;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Component;
 
 @Data
 @Component
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class LoginRequest {
     @ApiModelProperty(notes = "Email", example = "example@gmail.com", required = true)
-    private String email;
+    String email;
     @ApiModelProperty(notes = "Password", example = "Example123", required = true)
-    private String password;
+    String password;
 }

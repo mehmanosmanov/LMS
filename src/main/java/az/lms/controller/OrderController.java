@@ -1,8 +1,8 @@
 package az.lms.controller;
 
 
-import az.lms.dto.request.OrderRequest;
-import az.lms.dto.response.OrderResponse;
+import az.lms.model.dto.request.OrderRequest;
+import az.lms.model.dto.response.OrderResponse;
 import az.lms.service.OrderService;
 import io.swagger.annotations.*;
 import lombok.RequiredArgsConstructor;

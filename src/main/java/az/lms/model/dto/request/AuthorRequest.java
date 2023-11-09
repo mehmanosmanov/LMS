@@ -5,8 +5,9 @@
  *Project name:LMS
  */
 
-package az.lms.dto.request;
+package az.lms.model.dto.request;
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import javax.validation.constraints.*;
 import java.time.LocalDate;
@@ -16,18 +17,19 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class AuthorRequest {
     @NotBlank(message = "Name cannot be empty")
     @Size(max = 25, min = 2, message = "Invalid Name: Must be of 2 - 25 characters")
-    private String name;
+    String name;
 
     @Size(max = 25, message = "Invalid Name: Must be of 3 - 30 characters")
-    private String surname;
+    String surname;
 
     @Size(max = 200, message = "Invalid biography: Must be of max 200 characters")
-    private String biography;
+    String biography;
 
     @NotNull(message = "Invalid birthday: Birthday is NULL")
     @Past(message = "Date should not be in the future")
-    private LocalDate birthDay;
+    LocalDate birthDay;
 }

@@ -7,10 +7,10 @@
 
 package az.lms.controller;
 
-import az.lms.dto.request.AuthorRequest;
-import az.lms.dto.response.AuthorResponse;
-import az.lms.dto.response.BookResponse;
-import az.lms.model.Book;
+import az.lms.model.dto.request.AuthorRequest;
+import az.lms.model.dto.response.AuthorResponse;
+import az.lms.model.dto.response.BookResponse;
+import az.lms.model.entity.Book;
 import az.lms.service.AuthorService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

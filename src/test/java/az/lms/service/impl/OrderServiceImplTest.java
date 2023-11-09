@@ -1,14 +1,14 @@
 package az.lms.service.impl;
 
-import az.lms.dto.request.OrderRequest;
-import az.lms.dto.response.OrderResponse;
+import az.lms.model.dto.request.OrderRequest;
+import az.lms.model.dto.response.OrderResponse;
 import az.lms.exception.AlreadyExistsException;
 import az.lms.exception.InsufficientCount;
 import az.lms.exception.NotFoundException;
 import az.lms.mapper.OrderMapper;
-import az.lms.model.Book;
-import az.lms.model.Order;
-import az.lms.enums.OrderType;
+import az.lms.model.entity.Book;
+import az.lms.model.entity.Order;
+import az.lms.model.enums.OrderType;
 import az.lms.repository.BookRepository;
 import az.lms.repository.OrderRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +16,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;

@@ -7,8 +7,8 @@
 
 package az.lms.controller;
 
-import az.lms.dto.request.CategoryRequest;
-import az.lms.dto.response.CategoryResponse;
+import az.lms.model.dto.request.CategoryRequest;
+import az.lms.model.dto.response.CategoryResponse;
 import az.lms.service.CategoryService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

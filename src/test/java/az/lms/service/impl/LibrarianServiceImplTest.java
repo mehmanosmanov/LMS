@@ -1,12 +1,12 @@
 package az.lms.service.impl;
 
-import az.lms.dto.request.LibrarianRequest;
-import az.lms.dto.response.LibrarianResponse;
-import az.lms.enums.RoleType;
+import az.lms.model.dto.request.LibrarianRequest;
+import az.lms.model.dto.response.LibrarianResponse;
+import az.lms.model.enums.RoleType;
 import az.lms.exception.AlreadyExistsException;
 import az.lms.exception.NotFoundException;
 import az.lms.mapper.LibrarianMapper;
-import az.lms.model.Librarian;
+import az.lms.model.entity.Librarian;
 import az.lms.repository.LibrarianRepository;
 import az.lms.security.PasswordEncoder;
 import org.junit.jupiter.api.Test;

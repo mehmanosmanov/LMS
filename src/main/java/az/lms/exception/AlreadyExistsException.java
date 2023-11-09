@@ -2,7 +2,6 @@ package az.lms.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 /**
  * @author Mehman Osmanov on 11.08.23

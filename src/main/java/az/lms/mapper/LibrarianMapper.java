@@ -7,12 +7,15 @@
 
 package az.lms.mapper;
 
-import az.lms.dto.request.LibrarianRequest;
-import az.lms.dto.response.LibrarianResponse;
-import az.lms.model.Librarian;
+import az.lms.model.dto.request.LibrarianRequest;
+import az.lms.model.dto.response.LibrarianResponse;
+import az.lms.model.entity.Librarian;
 import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",
+        unmappedSourcePolicy = ReportingPolicy.IGNORE,
+        unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface LibrarianMapper {
     LibrarianResponse modelToResponse(Librarian author);
     Librarian requestToModel(LibrarianRequest request);

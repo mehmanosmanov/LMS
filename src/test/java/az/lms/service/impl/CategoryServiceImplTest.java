@@ -7,14 +7,13 @@
 
 package az.lms.service.impl;
 
-import az.lms.dto.request.CategoryRequest;
-import az.lms.dto.response.CategoryResponse;
+import az.lms.model.dto.request.CategoryRequest;
+import az.lms.model.dto.response.CategoryResponse;
 import az.lms.exception.AlreadyExistsException;
 import az.lms.exception.NotFoundException;
 import az.lms.mapper.CategoryMapper;
-import az.lms.model.Category;
+import az.lms.model.entity.Category;
 import az.lms.repository.CategoryRepository;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

@@ -7,8 +7,8 @@
 
 package az.lms.service;
 
-import az.lms.dto.request.CategoryRequest;
-import az.lms.dto.response.CategoryResponse;
+import az.lms.model.dto.request.CategoryRequest;
+import az.lms.model.dto.response.CategoryResponse;
 
 import java.util.List;
 

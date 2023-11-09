@@ -1,13 +1,11 @@
 package az.lms.mapper;
 
-import az.lms.dto.request.BookRequest;
-import az.lms.dto.response.BookResponse;
-import az.lms.model.Book;
+import az.lms.model.dto.request.BookRequest;
+import az.lms.model.dto.response.BookResponse;
+import az.lms.model.entity.Book;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
-
-import java.util.List;
 
 /**
  * @author ashraf

@@ -1,9 +1,11 @@
-package az.lms.dto.response;
+package az.lms.model.dto.response;
 
-import az.lms.enums.OrderType;
+import az.lms.model.enums.OrderType;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDateTime;
 
@@ -13,14 +15,15 @@ import java.time.LocalDateTime;
  */
 @Setter
 @Getter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class OrderResponse {
    @ApiModelProperty(notes = "Student ID", example = "1", required = true)
-   private Long studentId;
+   Long studentId;
    @ApiModelProperty(notes = "Book ID", example = "1", required = true)
-   private Long bookId;
+   Long bookId;
    @ApiModelProperty(notes = "Order time", example = "19:23:43 06.09.2023", required = true)
-   private LocalDateTime orderTime;
+   LocalDateTime orderTime;
    @ApiModelProperty(notes = "Order type", example = "BORROWED/RETURNED", required = true)
-   private OrderType orderType;
+   OrderType orderType;
 
 }

@@ -5,9 +5,10 @@
  *Project name:LMS
  */
 
-package az.lms.model;
+package az.lms.model.entity;
 
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -20,6 +21,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "authors")
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

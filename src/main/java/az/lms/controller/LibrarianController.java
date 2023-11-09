@@ -7,9 +7,9 @@
 
 package az.lms.controller;
 
-import az.lms.dto.request.LibrarianRequest;
-import az.lms.dto.response.AuthorResponse;
-import az.lms.dto.response.LibrarianResponse;
+import az.lms.model.dto.request.LibrarianRequest;
+import az.lms.model.dto.response.AuthorResponse;
+import az.lms.model.dto.response.LibrarianResponse;
 import az.lms.service.LibrarianService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

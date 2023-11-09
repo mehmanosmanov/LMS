@@ -1,7 +1,7 @@
 package az.lms.service;
 
-import az.lms.dto.request.OrderRequest;
-import az.lms.dto.response.OrderResponse;
+import az.lms.model.dto.request.OrderRequest;
+import az.lms.model.dto.response.OrderResponse;
 
 import java.util.List;
 

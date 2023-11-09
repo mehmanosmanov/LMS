@@ -1,9 +1,8 @@
 package az.lms.controller;
 
-import az.lms.dto.request.BookRequest;
-import az.lms.dto.response.BookResponse;
+import az.lms.model.dto.request.BookRequest;
+import az.lms.model.dto.response.BookResponse;
 import az.lms.service.BookService;
-import az.lms.util.FileUtil;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;

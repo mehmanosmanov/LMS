@@ -1,7 +1,7 @@
 package az.lms.service;
 
-import az.lms.dto.request.BookRequest;
-import az.lms.dto.response.BookResponse;
+import az.lms.model.dto.request.BookRequest;
+import az.lms.model.dto.response.BookResponse;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;

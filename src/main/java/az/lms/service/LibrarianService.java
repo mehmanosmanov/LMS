@@ -7,8 +7,8 @@
 
 package az.lms.service;
 
-import az.lms.dto.request.LibrarianRequest;
-import az.lms.dto.response.LibrarianResponse;
+import az.lms.model.dto.request.LibrarianRequest;
+import az.lms.model.dto.response.LibrarianResponse;
 
 import java.util.List;
 public interface LibrarianService {

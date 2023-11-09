@@ -1,6 +1,6 @@
 package az.lms.security;
 
-import az.lms.enums.TokenType;
+import az.lms.model.enums.TokenType;
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
