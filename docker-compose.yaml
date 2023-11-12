@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+
+  lms-spring-app:
+    build:
+      context: .
+    image: server/lms
+    container_name: lms_container
+    network_mode: host
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres

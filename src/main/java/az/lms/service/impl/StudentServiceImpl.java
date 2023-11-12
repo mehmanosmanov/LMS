@@ -65,7 +65,7 @@ public class StudentServiceImpl implements StudentService {
       try {
          emailService.sendEmail(to, subject, text);
       } catch (MessagingException e) {
-         throw new RuntimeException(e);
+         e.getCause();
       }
    }
 
